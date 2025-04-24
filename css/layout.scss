@@ -1,0 +1,425 @@
+/* 
+ * variables
+ */
+$color: #fff;
+
+
+/* 
+ * mixins
+ */
+
+@mixin transition($a){
+	-webkit-transition: $a;
+	-moz-transition: $a;
+	-ms-transition: $a;
+	-o-transition: $a;
+	transition: $a;
+}
+
+@mixin transition-duration($a) {
+	-webkit-transition-duration: $a;
+	-moz-transition-duration: $a;
+	-ms-transition-duration: $a;
+	-o-transition-duration: $a;
+	transition-duration: $a;
+}
+
+@mixin transition-delay($a) {
+	-webkit-transition-delay: $a;
+	-moz-transition-delay: $a;
+	-ms-transition-delay: $a;
+	-o-transition-delay: $a;
+	transition-delay: $a;
+}
+
+@mixin transform($a){
+	-webkit-transform: $a;
+	-moz-transform: $a;
+	-ms-transform: $a;
+	-o-transform: $a;
+	transform: $a;
+}
+
+@mixin transform-origin($a){
+	-webkit-transform-origin: $a;
+	-moz-transform-origin: $a;
+	-ms-transform-origin: $a;
+	-o-transform-origin: $a;
+	transform-origin: $a;
+}
+
+@mixin animation($a){
+	-webkit-animation: $a;
+	-moz-animation: $a;
+	-o-animation: $a;
+	animation: $a;
+}
+
+
+@font-face {
+	font-family: "CaslonIonic-Regular";
+	src: url("../fonts/CaslonIonic-Regular.otf") format("opentype");
+	font-style: normal;
+}
+@font-face {
+	font-family: "CaslonIonic-RegularItalic";
+	src: url("../fonts/CaslonIonic-RegularItalic.otf") format("opentype");
+	font-style: normal;
+}
+
+
+/* 
+ * general
+ */
+
+	body{
+		background: #fff;
+		color: black;
+	}
+	
+	a{
+		
+		text-decoration: none;
+		outline: none;
+		color: black;
+		
+		&:hover{
+			// color:#444;
+		}
+		
+	}
+	
+	::selection{
+		background:#000;
+		color:#fff;
+	}
+	
+	::-moz-selection{
+		background:#000;
+		color:#fff;
+	}
+	
+	
+	
+	
+/* 
+ * typography
+ */	
+	
+	body{
+		
+		font-family: 'CaslonIonic-Regular', times, serif;
+		font-size: 10px;
+		line-height: 15px;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		
+		header a,
+		#modal a,
+		strong{
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			font-weight: normal;
+		}
+		
+		em{
+			font-family: 'CaslonIonic-RegularItalic', times, serif;
+		}
+		
+		#about div p span{
+			padding-left: 15px;
+		}
+		
+	}
+	
+	
+/* 
+ * layout
+ */
+	
+	header{
+		
+		position:fixed;
+		top:0;
+		z-index:5;
+		
+		a{
+			display:block;
+			padding:20px;
+		}
+		
+	}
+	
+	section{
+		
+		&#grid{
+			
+			text-align:center;
+			
+			z-index:1;
+			//height:calc(100vh - 200px);
+			
+			a{
+				
+				display: inline-block;
+				height:240px;
+				//@include transition(opacity .3s ease-out);
+				@include transform(translateZ(0));
+				
+				img, 
+				video{
+					display:inline;
+					margin:0;
+					padding:0;
+					width:auto;
+					height:100%;
+					vertical-align:middle;
+					object-fit:contain;
+				}
+				
+				
+			
+			}
+			
+		}
+		
+		&#modal{
+			
+			position:fixed;
+			width:100vw;
+			height:100vh;
+			top:0;
+			left:0;
+			background:#fff;
+			z-index:2;
+			display:none;
+			
+			> a{
+				position:fixed;
+			}
+			
+			div{
+				
+				padding:25px 20px;
+				width:calc(100vw - 40px);
+				height:calc(100vh - 50px);
+				overflow:hidden;
+				//cursor:e-resize;
+				cursor:pointer;
+				
+				img,
+				video{
+					position:absolute;
+					height:calc(100vh - 50px);
+					max-width:calc(100vw - 40px);
+					object-fit:contain;
+					top:50%;
+					left:50%;
+					@include transform(translate3d(-50%, -50%, 0));
+					@include transform-origin(left);
+				}
+				
+			}
+			
+		}
+		
+		&#about{
+			
+			position:fixed;
+			overflow:hidden;
+			top:40px;
+			bottom: 20px;
+			z-index:4;
+			color:#000;
+			max-width:360px;
+			display:none;
+			/*
+			height:0;
+			@include transition(height .3s cubic-bezier(0,1,0,1));
+			*/
+			
+			div,
+			footer{
+				
+				//height:100vh;
+				
+				p{
+					
+					padding: 0 20px;
+					
+				}
+				
+			}
+			
+			footer{
+				position: absolute;
+				bottom: 0;
+			}
+			
+		}
+		
+		&#about,
+		&#modal{
+			
+			> a{
+				display:block;
+				padding:20px;
+				right:0;
+				z-index:2;
+			}
+			
+			div{
+				position:relative;
+				z-index:1;
+			}
+			
+		}
+		
+	}
+	
+	body{
+		
+		&.zoom{
+			
+			overflow:hidden;
+			
+			section{
+				
+				&#modal{
+					
+					display:block;
+					
+					div img{
+						
+						//@include animation(modal 1s 1 cubic-bezier(0,1,0,1));
+						
+					}
+					
+				}
+				
+			}
+			
+		}
+		
+		&.about{
+			
+			section{
+				
+				&#grid{
+					overflow:hidden;
+				}
+				
+				&#about{
+					//height:100vh;
+					display:block;
+				}
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	
+	@-webkit-keyframes modal {
+		0% { @include transform( scale(0.97) translateX(-50%) );}
+		100% { @include transform( scale(1) translateX(-50%) );}
+	}
+	
+	@-moz-keyframes modal {
+		0% { @include transform( scale(0.97) translateX(-50%) );}
+		100% { @include transform( scale(1) translateX(-50%) );}
+	}
+	
+	@-o-keyframes modal {
+		0% { @include transform( scale(0.97) translateX(-50%) );}
+		100% { @include transform( scale(1) translateX(-50%) );}
+	}
+	
+	@keyframes modal {
+		0% { @include transform( scale(0.97) translateX(-50%) );}
+		100% { @include transform( scale(1) translateX(-50%) );}
+	}
+
+
+/* 
+ * media queries
+ */
+
+
+@media screen and (min-width: 0px){
+	
+	section#grid{
+		margin:calc(50vh - 160px) 0;
+	}
+	
+	section#grid a{
+		margin:40px;
+		
+		img,
+		video{
+			max-width:calc(100vw - 80px);
+		}
+		
+	}
+	
+	section#modal{
+		
+		div{
+			
+			video{
+				
+				height:calc(100vh - 40px);
+				max-width:calc(100vw - 40px);
+				
+			}
+			
+		}
+	}
+	
+}
+
+@media screen and (min-width: 760px){
+	
+	section#grid{
+		margin:calc(50vh - 220px) 0;
+	}
+	
+	section#grid a{
+		margin:100px;
+		
+		img,
+		video{
+			max-width:auto;
+		}
+		
+	}
+	
+	section#modal{
+		
+		div{
+			
+			video{
+				
+				height:calc(100vh - 300px);
+				max-width:calc(100vw - 300px);
+				
+			}
+			
+		}
+	}
+	
+}
+
+
+
+/* hight density screens  */
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 1.25), 
+only screen and ( min-device-pixel-ratio: 1.25), 
+only screen and ( min-resolution: 200dpi), 
+only screen and ( min-resolution: 1.25dppx){
+	-webkit-font-smoothing: subpixel-antialiased;
+	font-smoothing: subpixel-antialiased;
+}

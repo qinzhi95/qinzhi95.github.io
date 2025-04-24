@@ -1,1 +1,159 @@
-<p>你好</p>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Thomas Slack Studio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <meta name="description"
+        content="Thomas Slack is a New York based photographer. whose work blends fashion and portraiture to create minimal and sophisticated images. Clients include Aldo, The Line, Rag and Bone, Theory, Calvin Klein, Standard Hotel." />
+    <meta name="keywords" content="thomas slack, photographer, new york city" />
+    <meta property="og:title" content="Thomas Slack" />
+    <meta property="og:description"
+        content="Thomas Slack is a New York based photographer. whose work blends fashion and portraiture to create minimal and sophisticated images. Clients include Aldo, The Line, Rag and Bone, Theory, Calvin Klein, Standard Hotel." />
+    <meta property="og:url" content="http://tomkellyslack.com" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png"
+        href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAB9JREFUeNpi/P//PwMlgImBQjBqwKgBowYMFgMAAgwAY5oDHVti48YAAAAASUVORK5CYII=" />
+    <meta property="og:url" content="http://tomkellyslack.com">
+    <meta property="og:title" content="Thomas Slack Studio">
+    <meta property="og:description"
+        content="Thomas Slack is a New York based photographer. whose work blends fashion and portraiture to create minimal and sophisticated images. Clients include Aldo, The Line, Rag and Bone, Theory, Calvin Klein, Standard Hotel.">
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="stylesheet" type="text/css" href="./css/layout.css" />
+    <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.bez.min.js"></script>
+    <script type="text/javascript" src="./js/app.min.js"></script>
+    <style type="text/css">
+        audio {
+            display: none;
+        }
+
+        /* 禁止长按图片保存 */
+        img {
+            -webkit-touch-callout: none;
+            pointer-events: none;
+            /* 像微信浏览器还是无法禁止，加上这行样式即可 */
+        }
+
+        /* 禁止长按选择文字 */
+        div {
+            -webkit-user-select: none;
+        }
+
+        /* 禁止长按呼出菜单 */
+        div {
+            -webkit-touch-callout: none;
+        }
+    </style>
+    <script type="text/javascript">
+
+        function playMusic() {
+            document.getElementById("myaudio").play();
+        }
+
+        // oncontextmenu事件禁用右键菜单
+        document.oncontextmenu = function () {
+            return false;
+        }
+
+        // 禁用开发者工具F12
+        document.onkeydown = function () {
+            if (window.event && window.event.keyCode == 123) {
+                event.keyCode = 0;
+                event.returnValue = false;
+                return false;
+            }
+        };
+
+        //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面 
+        let h = window.innerHeight;
+        let w = window.innerWidth;
+        // window.onresize = function () {
+        //     if (h != window.innerHeight || w != window.innerWidth) {
+        //         window.close();
+        //         window.location = "about:blank";
+        //     }
+        // }
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <!-- <a href="#">Thomas Slack Studio</a> -->
+        <a href="#">Qinzhi Photos</a>
+
+    </header>
+
+    <section id="grid" onclick='playMusic()'>
+        <audio id="myaudio" src="./audio/Forgotten Postcards - Luke Howard.mp3" controls="controls" autoplay loop="loop"
+            preload="auto">
+        </audio>
+        <a href="#" data-name="Ireen_1.jpg" data-video="false">
+            <img src="./img/content/1/l/Ireen_1.jpg">
+        </a>
+
+        <a href="#" data-name="nichols_canyon.jpg" data-video="false">
+            <img src="./img/content/1/l/nichols_canyon.jpg">
+        </a>
+        <a href="#" data-name="http://vjs.zencdn.net/v/oceans.mp4" data-video="true">
+            <video autoplay loop muted>
+                <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+            </video>
+        </a>
+        <a href="#" data-name="Ireen_1.jpg" data-video="false">
+            <img src="./img/content/1/l/Ireen_1.jpg">
+        </a>
+        <a href="#" data-name="nichols_canyon.jpg" data-video="false">
+            <img src="./img/content/1/l/nichols_canyon.jpg">
+        </a>
+    </section>
+    <section id="modal">
+
+        <a href="#" class="close">Close</a>
+
+        <div>
+
+            <img>
+
+        </div>
+
+    </section>
+
+    <section id="about">
+
+        <div>
+
+            <p>
+                不屈己 不干人<br>
+                <br>
+                <span>1</span><br>
+                <strong>About / 关于</strong><br>
+                <!-- <em>New York</em><br>
+                rebecca@supervisionnewyork.com<br>
+                <em>Los Angeles</em><br>
+                kiersta@supervisionlosangeles.com<br>
+                <em>Europe</em><br>
+                natalie@supervisioneurope.com<br> -->
+                <br>
+                <span>2</span><br>
+                <strong>contact / 联系</strong><br>
+                <a href="mailto:qinzhi95@hotmail.com" target="_blank">qinzhi95@hotmail.com</a><br>
+                <a href="https://www.instagram.com/tomkellyslack/" target="_blank">@tomkellyslack</a><br>
+                <br>
+                <span>3</span><br>
+                <strong>City / 城市</strong><br>
+                中国·滁州
+            </p>
+
+        </div>
+
+        <footer>
+
+            <p>&copy; 2022 Thomas Slack Studio, CN, <span id="time"></span></p>
+
+        </footer>
+</body>
+
+</html>

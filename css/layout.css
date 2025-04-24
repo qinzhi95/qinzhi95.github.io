@@ -1,0 +1,332 @@
+/* 
+ * variables
+ */
+/* 
+ * mixins
+ */
+@font-face {
+  font-family: "CaslonIonic-Regular";
+  src: url("../fonts/CaslonIonic-Regular.otf") format("opentype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CaslonIonic-RegularItalic";
+  src: url("../fonts/CaslonIonic-RegularItalic.otf") format("opentype");
+  font-style: normal;
+}
+
+/* 
+ * general
+ */
+body {
+  background: #fff;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+}
+
+/* 
+ * typography
+ */
+body {
+  font-family: 'CaslonIonic-Regular', times, serif;
+  font-size: 10px;
+  line-height: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body header a,
+body #modal a,
+body strong {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+body em {
+  font-family: 'CaslonIonic-RegularItalic', times, serif;
+}
+
+body #about div p span {
+  padding-left: 15px;
+}
+
+/* 
+ * layout
+ */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+header a {
+  display: block;
+  padding: 20px;
+}
+
+section#grid {
+  text-align: center;
+  z-index: 1;
+}
+
+section#grid a {
+  display: inline-block;
+  height: 240px;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+section#grid a img,
+section#grid a video {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: 100%;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+section#modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 2;
+  display: none;
+}
+
+section#modal>a {
+  position: fixed;
+}
+
+section#modal div {
+  padding: 25px 20px;
+  width: calc(100vw - 40px);
+  height: calc(100vh - 50px);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+section#modal div img,
+section#modal div video {
+  position: absolute;
+  height: calc(100vh - 50px);
+  max-width: calc(100vw - 40px);
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform-origin: left;
+  -moz-transform-origin: left;
+  -ms-transform-origin: left;
+  -o-transform-origin: left;
+  transform-origin: left;
+}
+
+section#about {
+  position: fixed;
+  overflow: hidden;
+  top: 40px;
+  bottom: 20px;
+  z-index: 4;
+  color: #000;
+  max-width: 360px;
+  /* display: none; */
+  /*
+  height:0;
+  @include transition(height .3s cubic-bezier(0,1,0,1));
+  */
+}
+
+section#about div p,
+section#about footer p {
+  padding: 0 20px;
+}
+
+section#about footer {
+  position: absolute;
+  bottom: 0;
+}
+
+section#about>a,
+section#modal>a {
+  display: block;
+  padding: 20px;
+  right: 0;
+  z-index: 2;
+}
+
+section#about div,
+section#modal div {
+  position: relative;
+  z-index: 1;
+}
+
+body.zoom {
+  overflow: hidden;
+}
+
+body.zoom section#modal {
+  display: block;
+}
+
+body.about section#grid {
+  overflow: hidden;
+}
+
+body.about section#about {
+  display: block;
+}
+
+@-webkit-keyframes modal {
+  0% {
+    -webkit-transform: scale(0.97) translateX(-50%);
+    -moz-transform: scale(0.97) translateX(-50%);
+    -ms-transform: scale(0.97) translateX(-50%);
+    -o-transform: scale(0.97) translateX(-50%);
+    transform: scale(0.97) translateX(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%);
+  }
+}
+
+@-moz-keyframes modal {
+  0% {
+    -webkit-transform: scale(0.97) translateX(-50%);
+    -moz-transform: scale(0.97) translateX(-50%);
+    -ms-transform: scale(0.97) translateX(-50%);
+    -o-transform: scale(0.97) translateX(-50%);
+    transform: scale(0.97) translateX(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%);
+  }
+}
+
+@-o-keyframes modal {
+  0% {
+    -webkit-transform: scale(0.97) translateX(-50%);
+    -moz-transform: scale(0.97) translateX(-50%);
+    -ms-transform: scale(0.97) translateX(-50%);
+    -o-transform: scale(0.97) translateX(-50%);
+    transform: scale(0.97) translateX(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%);
+  }
+}
+
+@keyframes modal {
+  0% {
+    -webkit-transform: scale(0.97) translateX(-50%);
+    -moz-transform: scale(0.97) translateX(-50%);
+    -ms-transform: scale(0.97) translateX(-50%);
+    -o-transform: scale(0.97) translateX(-50%);
+    transform: scale(0.97) translateX(-50%);
+  }
+
+  100% {
+    -webkit-transform: scale(1) translateX(-50%);
+    -moz-transform: scale(1) translateX(-50%);
+    -ms-transform: scale(1) translateX(-50%);
+    -o-transform: scale(1) translateX(-50%);
+    transform: scale(1) translateX(-50%);
+  }
+}
+
+/* 
+ * media queries
+ */
+@media screen and (min-width: 0px) {
+  section#grid {
+    margin: calc(50vh - 160px) 0;
+  }
+
+  section#grid a {
+    margin: 40px;
+  }
+
+  section#grid a img,
+  section#grid a video {
+    max-width: calc(100vw - 80px);
+  }
+
+  section#modal div video {
+    height: calc(100vh - 40px);
+    max-width: calc(100vw - 40px);
+  }
+}
+
+@media screen and (min-width: 760px) {
+  section#grid {
+    margin: calc(50vh - 220px) 0;
+  }
+
+  section#grid a {
+    margin: 100px;
+  }
+
+  section#grid a img,
+  section#grid a video {
+    max-width: auto;
+  }
+
+  section#modal div video {
+    height: calc(100vh - 300px);
+    max-width: calc(100vw - 300px);
+  }
+}
+
+/* hight density screens  */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and (min-device-pixel-ratio: 1.25),
+only screen and (min-resolution: 200dpi),
+only screen and (min-resolution: 1.25dppx) {
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-smoothing: subpixel-antialiased;
+}
+
+/*# sourceMappingURL=layout.css.map */
