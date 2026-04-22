@@ -38,7 +38,11 @@
     <script type="text/javascript">
 
         function playMusic() {
+          if (document.getElementById("myaudio").paused) {
             document.getElementById("myaudio").play();
+          }else{
+            console.log("播放中");
+          }
         }
 
         // oncontextmenu事件禁用右键菜单
@@ -56,14 +60,14 @@
         // };
 
         //如果用户在工具栏调起开发者工具，那么判断浏览器的可视高度和可视宽度是否有改变，如有改变则关闭本页面
-        let h = window.innerHeight;
-        let w = window.innerWidth;
-        window.onresize = function () {
-            if (h != window.innerHeight || w != window.innerWidth) {
-                window.close();
-                window.location = "about:blank";
-            }
-        }
+        // let h = window.innerHeight;
+        // let w = window.innerWidth;
+        // window.onresize = function () {
+        //     if (h != window.innerHeight || w != window.innerWidth) {
+        //         window.close();
+        //         window.location = "about:blank";
+        //     }
+        // }
         
     </script>
 </head>
@@ -91,7 +95,7 @@
 
         <a href="#" data-name="IMG_5233.JPG" data-video="false">
             <img src="./img/content/1/m/IMG_5233.jpg">
-            <div class="caption">迎风摇曳的芦苇</div>
+            <div class="caption">芦苇</div>
         </a>
 
         <a href="#" data-name="IMG_5224.JPG" data-video="false">
@@ -106,10 +110,10 @@
             <div class="caption">视频播放测试</div>
         </a>
 
-         <a href="#" data-name="Ireen_1.jpg" data-video="false">
+         <!-- <a href="#" data-name="Ireen_1.jpg" data-video="false">
             <img src="./img/content/1/m/Ireen_1.jpg">
             <div class="caption">暮色中的芦苇</div>
-        </a>
+        </a> -->
     </section>
     <section id="modal">
 
@@ -136,7 +140,7 @@
 
         <footer>
 
-            <p style="color:rgba(0,0,0,.5)">&copy; 2025 <a href="mailto:qinzhi95@hotmail.com">Qinzhi Photos</a></p>
+            <p style="color:rgba(0,0,0,.5)">&copy; 2026 <a href="mailto:qinzhi95@hotmail.com">Qinzhi Photos</a></p>
 
             <!-- <span id="time"></span> -->
             </p>
